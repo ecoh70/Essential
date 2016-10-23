@@ -1,8 +1,6 @@
 import parse_expr
 
-variables = {}
-
-def getVar(key):
+def getVar(variables, key):
     if key[0] == '%':
         if key[1:] not in variables:
             return None
@@ -12,5 +10,6 @@ def getVar(key):
     else:
         return key
 
-def set_var(key, val):
+def set_var(variables, key, val):
     variables[key] = get_var(val)
+    return get_var(variables, key)
