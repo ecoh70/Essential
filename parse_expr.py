@@ -1,4 +1,4 @@
-import get_var
+from vars import *
 
 def parse_expr(expr):
     stack = []
