@@ -1,4 +1,4 @@
-from classes import *
+from src import classes
 
 def parse(src):
     stack = [[]]
@@ -50,7 +50,7 @@ def parse(src):
             stack[-1].append(temp)
             args_t = stack[-1]
             stack.remove(args_t)
-            stack[-1].append(Args(args_t))
+            stack[-1].append(classes.Args(args_t))
             
         elif sym == ']' and not in_str and not in_quote:
             if word:
@@ -60,7 +60,7 @@ def parse(src):
             stack[-1].append(temp)
             list_t = stack[-1]
             stack.remove(list_t)
-            stack[-1].append(List(list_t))
+            stack[-1].append(classes.List(list_t))
             
         elif sym in (' ', '\t') and not in_str and not in_quote:
             if word:
@@ -72,14 +72,14 @@ def parse(src):
             if in_str:
                 str_t = stack[-1]
                 stack.remove(str_t)
-                stack[-1].append(String(str_t))
+                stack[-1].append(classes.String(str_t))
                 
         elif sym == '\'' and not prev_sym == '\\':
             in_quote = not in_quote
             if in_quote:
                 quote_t = stack[-1]
                 stack.remove(quote_t)
-                stack[-1].append(Quote(quote_t))
+                stack[-1].append(classes.Quote(quote_t))
                 
         elif sym in ('=', '!', '>', '<', '+', '-', '*', '/'):
             if word:
