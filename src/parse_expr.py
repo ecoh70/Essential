@@ -1,10 +1,10 @@
-from src import var
+import src.var as essl
 
 def parse_expr(expr):
     stack = []
     for term in expr:
         if not term in ('+', '-', '*', '/'):
-            stack.append(var.get_var(term))
+            stack.append(essl.get_var(term))
             
         elif term in ('+', '-', '/', '*'):
             operand = stack.pop()
