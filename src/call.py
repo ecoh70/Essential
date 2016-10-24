@@ -1,9 +1,9 @@
-from essl import exec
-from essl import vars
+import src.exec as essl
+import src.var
 
 def call(method, args):
     stack = []
     for arg in args:
-        stack.append(vars.get_var(args))
+        stack.append(var.get_var(args))
         
-    return essl.exec(vars.functions[method], stack)
+    return essl.exec(var.functions[method], stack)
