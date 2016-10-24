@@ -1,4 +1,4 @@
-import parse_expr import parse_expr
+import src.parse_expr as essl
 
 variables = {}
 global variables
@@ -6,14 +6,14 @@ global variables
 functions = {}
 global functions
 
-def getVar(key):
+def get_var(key):
     if key[0] == '%':
         if key[1:] not in variables:
             return None
         return variables[key[1:]]
     
     elif key[-1] in ('+', '-', '/', '*'):
-        return parse_expr(key)
+        return essl.parse_expr(key)
     
     else:
         return key
