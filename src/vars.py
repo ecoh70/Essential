@@ -11,8 +11,10 @@ def getVar(key):
         if key[1:] not in variables:
             return None
         return variables[key[1:]]
+    
     elif key[-1] in ('+', '-', '/', '*'):
         return parse_expr(key)
+    
     else:
         return key
 
