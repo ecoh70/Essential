@@ -1,32 +1,32 @@
-from vars import get_var
+from src import var
 
-def test(var, op, val):
+def test(key, op, val):
     if op == '==':
-        if get_var(var) == get_var(val):
+        if var.get_var(key) == var.get_var(val):
             return True
         return False
     
     elif op == '!=':
-        if get_var(var) != get_var(val):
+        if var.get_var(key) != var.get_var(val):
             return True
         return False
     
     elif op == '>':
-        if get_var(var) > get_var(val):
+        if var.get_var(key) > var.get_var(val):
             return True
         return False
     
     elif op == '<':
-        if get_var(var) < get_var(val):
+        if var.get_var(key) < var.get_var(val):
             return True
         return False
     
     elif op == '>=':
-        if get_var(var) >= get_var(val):
+        if var.get_var(key) >= var.get_var(val):
             return True
         return False
     
     elif op == '<=':
-        if get_var(var) <= get_var(val):
+        if var.get_var(key) <= var.get_var(val):
             return True
         return False
