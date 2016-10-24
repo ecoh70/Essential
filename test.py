@@ -1,4 +1,4 @@
-from var_hand import get_var
+from vars import get_var
 
 def test(var, op, val):
     if op == '==':
