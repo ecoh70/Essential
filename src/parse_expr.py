@@ -1,10 +1,10 @@
-from src import vars
+from src import var
 
 def parse_expr(expr):
     stack = []
     for term in expr:
         if not term in ('+', '-', '*', '/'):
-            stack.append(vars.get_var(term))
+            stack.append(var.get_var(term))
             
         elif term in ('+', '-', '/', '*'):
             operand = stack.pop()
