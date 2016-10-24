@@ -3,6 +3,9 @@ import parse_expr import parse_expr
 variables = {}
 global variables
 
+functions = {}
+global functions
+
 def getVar(key):
     if key[0] == '%':
         if key[1:] not in variables:
