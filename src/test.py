@@ -1,32 +1,32 @@
-from src import var
+import src.var as essl
 
 def test(key, op, val):
     if op == '==':
-        if var.get_var(key) == var.get_var(val):
+        if essl.get_var(key) == essl.get_var(val):
             return True
         return False
     
     elif op == '!=':
-        if var.get_var(key) != var.get_var(val):
+        if essl.get_var(key) != essl.get_var(val):
             return True
         return False
     
     elif op == '>':
-        if var.get_var(key) > var.get_var(val):
+        if essl.get_var(key) > essl.get_var(val):
             return True
         return False
     
     elif op == '<':
-        if var.get_var(key) < var.get_var(val):
+        if essl.get_var(key) < essl.get_var(val):
             return True
         return False
     
     elif op == '>=':
-        if var.get_var(key) >= var.get_var(val):
+        if essl.get_var(key) >= essl.get_var(val):
             return True
         return False
     
     elif op == '<=':
-        if var.get_var(key) <= var.get_var(val):
+        if essl.get_var(key) <= essl.get_var(val):
             return True
         return False
